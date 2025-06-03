@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joke Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: #f0f8ff;
+        }
+        
+        .joke-box {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        #joke {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+        
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            background: #007acc;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background: #005fa3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="joke-box">
+        <h1>😂 Joke Generator</h1>
+        <p id="joke">Click the button to get a joke!</p>
+        <button onclick="generateJoke()">Tell me a joke</button>
+    </div>
+
+    <script>
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "I told my computer I needed a break, and it said 'No problem — I'll go to sleep.'",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Why did the math book look sad? Because it had too many problems.",
+            "What do you call fake spaghetti? An impasta!"
+        ];
+
+        function generateJoke() {
+            const joke = jokes[Math.floor(Math.random() * jokes.length)];
+            document.getElementById("joke").textContent = joke;
+        }
+    </script>
+</body>
+
+</html>
